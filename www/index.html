@@ -31,7 +31,7 @@
     <!-- Views -->
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
+        <div class="view view-main" >
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
@@ -51,22 +51,22 @@
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
-                    <div class="page-content">
+                    <div class="page-content" ng-controller="ListCtrl">
                         <p>Page content goes here</p>
 
-                        <div class="content-block-title">Songs</div>
-                        <div class="list-block media-list" ng-controller="ListController">
+                        <div class="content-block-title">Songs {{test}}</div>
+                        <div class="list-block media-list">
                             <ul>
                                 <li ng-repeat="car in cars">
                                     <a href="#" class="item-link item-content">
-                                        <div class="item-media"><img src="..." width="80"></div>
+                                        <div class="item-media"><img ng-src="{{car.image_url}}" width="80"></div>
                                         <div class="item-inner">
                                             <div class="item-title-row">
-                                                <div class="item-title">Yellow Submarine</div>
+                                                <div class="item-title">{{car.company_name}}</div>
                                                 <div class="item-after">$15</div>
                                             </div>
-                                            <div class="item-subtitle">Beatles</div>
-                                            <div class="item-text">Lorem ipsum dolor sit amet...</div>
+                                            <div class="item-subtitle">{{car.model_name}}</div>
+                                            <div class="item-text">{{car.description}}</div>
                                         </div>
                                     </a>
                                 </li>
